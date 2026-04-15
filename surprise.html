@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Surprise</title>
+</head>
+<style>
+    * {
+        margin: 0px;
+        padding: 0px;
+        box-sizing: border-box;
+    }
+
+    body {
+        background: linear-gradient(90deg, pink, hotpink);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    h2 {
+        color: rgba(0, 0, 0, 0.741);
+        text-align: center;
+        margin-top: 20px;
+    }
+
+    .card {
+        /* border: 2px solid black; */
+        width: 220px;
+        height: 300px;
+        margin-top: 40px;
+    }
+
+    .card img{
+        border-radius: 10px;
+        margin-top: 15px;
+        margin-left: 8px;
+    }
+
+    .card button{
+        border:none;  
+        border-radius: 20px;
+        width: 80px;
+        text-align: center;
+        margin:29px 10px 7px 10px;
+        cursor: pointer;
+        background: linear-gradient(145deg,rgb(137, 3, 81),rgb(240, 2, 145));
+        padding: 8px;
+        font-size: 15px;
+        color: white;
+        font-weight: bold;
+    }
+    .scale3d:hover {
+      transform: scale3d(1.1, 1.1, 1.1);
+    }
+
+    .card button a{
+        text-decoration: none;
+        color: white;
+    }
+</style>
+
+<body>
+    <div class="container">
+        <h2>Do you want a gift ?</h2>
+        <div class="card">
+            <img
+                src="https://media3.giphy.com/media/v1.Y2lkPTZjMDliOTUybmE5YWk5NXZsazNjN2xiNHM0ZnAxczA1eWR6eHhhZWgzc2h6NTljciZlcD12MV9naWZzX3NlYXJjaCZjdD1n/IZek2g6kKZ8AXnAsUJ/200w.gif">
+            <button class="scale3d"><a href="yes.html">Yes</a></button>
+             <button class="scale3d"><a href="howdareyou.html">No</a></button>
+        </div>
+    </div>
+</body>
+
+</html>
