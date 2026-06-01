@@ -1,77 +1,119 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Surprise</title>
-</head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Surprise 💌</title>
+
 <style>
-    * {
-        margin: 0px;
-        padding: 0px;
-        box-sizing: border-box;
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    min-height:100vh;
+    background:linear-gradient(90deg,pink,hotpink);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:20px;
+}
+
+.container{
+    width:100%;
+    max-width:400px;
+    text-align:center;
+}
+
+h2{
+    color:rgba(0,0,0,0.8);
+    margin-bottom:20px;
+    font-size:clamp(1.5rem,4vw,2rem);
+}
+
+.card{
+    width:100%;
+    /* background:white; */
+    border-radius:15px;
+    padding:20px;
+    box-shadow:0 4px 15px rgba(0,0,0,0.15);
+}
+
+.card img{
+    width:100%;
+    max-width:220px;
+    height:auto;
+    border-radius:10px;
+}
+
+.buttons{
+    display:flex;
+    justify-content:center;
+    gap:15px;
+    margin-top:20px;
+    flex-wrap:wrap;
+}
+
+button{
+    border:none;
+    border-radius:20px;
+    cursor:pointer;
+    background:linear-gradient(145deg,rgb(137,3,81),rgb(240,2,145));
+    padding:10px 25px;
+    font-size:15px;
+    color:white;
+    font-weight:bold;
+    transition:.3s;
+}
+
+button:hover{
+    transform:scale(1.08);
+}
+
+button a{
+    text-decoration:none;
+    color:white;
+}
+
+@media(max-width:480px){
+
+    .card{
+        padding:15px;
     }
 
-    body {
-        background: linear-gradient(90deg, pink, hotpink);
-        display: flex;
-        align-items: center;
-        justify-content: center;
+    .buttons{
+        flex-direction:column;
+        align-items:center;
     }
 
-    h2 {
-        color: rgba(0, 0, 0, 0.741);
-        text-align: center;
-        margin-top: 20px;
+    button{
+        width:100%;
+        max-width:200px;
     }
-
-    .card {
-        /* border: 2px solid black; */
-        width: 220px;
-        height: 300px;
-        margin-top: 40px;
-    }
-
-    .card img{
-        border-radius: 10px;
-        margin-top: 15px;
-        margin-left: 8px;
-    }
-
-    .card button{
-        border:none;  
-        border-radius: 20px;
-        width: 80px;
-        text-align: center;
-        margin:29px 10px 7px 10px;
-        cursor: pointer;
-        background: linear-gradient(145deg,rgb(137, 3, 81),rgb(240, 2, 145));
-        padding: 8px;
-        font-size: 15px;
-        color: white;
-        font-weight: bold;
-    }
-    .scale3d:hover {
-      transform: scale3d(1.1, 1.1, 1.1);
-    }
-
-    .card button a{
-        text-decoration: none;
-        color: white;
-    }
+}
 </style>
+</head>
 
 <body>
-    <div class="container">
-        <h2>Do you want a gift ?</h2>
-        <div class="card">
-            <img
-                src="https://media3.giphy.com/media/v1.Y2lkPTZjMDliOTUybmE5YWk5NXZsazNjN2xiNHM0ZnAxczA1eWR6eHhhZWgzc2h6NTljciZlcD12MV9naWZzX3NlYXJjaCZjdD1n/IZek2g6kKZ8AXnAsUJ/200w.gif">
-            <button class="scale3d"><a href="yes.html">Yes</a></button>
-             <button class="scale3d"><a href="howdareyou.html">No</a></button>
-        </div>
-    </div>
-</body>
 
+<div class="container">
+
+    <h2>Do you want a gift ? 🎁</h2>
+
+    <div class="card">
+
+        <img src="bunny.gif" alt="Gift GIF">
+
+        <div class="buttons">
+            <button><a href="yes.html">Yes</a></button>
+            <button><a href="howdareyou.html">No</a></button>
+        </div>
+
+    </div>
+
+</div>
+
+</body>
 </html>

@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Surprise 💌</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
+}
+
+body{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:linear-gradient(135deg,pink,hotpink);
+    padding:20px;
+}
+
+.card{
+    text-align:center;
+    width:100%;
+    max-width:450px;
+}
+
+.card img{
+    width:100%;
+    max-width:300px;
+    height:auto;
+    animation:bounce 2s infinite alternate;
+}
+
+.card button{
+    margin-top:20px;
+    border:none;
+    border-radius:30px;
+    padding:12px 28px;
+    color:white;
+    cursor:pointer;
+    font-size:16px;
+    font-weight:bold;
+    background:linear-gradient(90deg,pink,rgb(136,33,97));
+    transition:.3s;
+}
+
+.card button:hover{
+    transform:scale(1.08);
+    background:linear-gradient(120deg,rgb(51,100,205),blue);
+}
+
+/* POPUP */
+
+.popup{
+    position:fixed;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%) scale(0);
+    width:90%;
+    max-width:550px;
+    max-height:85vh;
+    overflow-y:auto;
+    background:white;
+    padding:25px;
+    border-radius:20px;
+    text-align:center;
+    box-shadow:0 10px 30px rgba(0,0,0,.3);
+    transition:.5s;
+    z-index:100;
+}
+
+.popup.show{
+    transform:translate(-50%,-50%) scale(1);
+}
+
+.popup h2{
+    color:#e91e63;
+    margin-bottom:15px;
+    font-size:clamp(1.3rem,4vw,2rem);
+}
+
+#message{
+    text-align:left;
+    line-height:1.8;
+    color:#444;
+    min-height:120px;
+    font-size:clamp(.95rem,2vw,1.05rem);
+}
+
+#message::after{
+    content:"|";
+    color:#e91e63;
+    font-weight:bold;
+    animation:blink .8s infinite;
+}
+
+.close-btn{
+    margin-top:20px;
+    background:#e91e63 !important;
+}
+
+@keyframes blink{
+    50%{
+        opacity:0;
+    }
+}
+
+@keyframes bounce{
+    from{
+        transform:translateY(0);
+    }
+    to{
+        transform:translateY(-15px);
+    }
+}
+
+/* MOBILE */
+
+@media (max-width:768px){
+
+    .popup{
+        padding:20px;
+    }
+
+    .card img{
+        max-width:250px;
+    }
+
+    .card button{
+        width:100%;
+        max-width:250px;
+    }
+}
+
+@media (max-width:480px){
+
+    body{
+        padding:15px;
+    }
+
+    .card img{
+        max-width:220px;
+    }
+
+    .popup{
+        width:95%;
+        padding:18px;
+        border-radius:15px;
+    }
+
+    .card button{
+        font-size:15px;
+        padding:12px 20px;
+    }
+
+    #message{
+        line-height:1.6;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="card">
+
+    <img id="gift" src="surprise.png" alt="Surprise">
+
+    <br>
+
+    <button onclick="openLetter()">
+        Tap To Open 💌
+    </button>
+
+</div>
+
+<!-- Popup -->
+
+<div class="popup" id="popup">
+
+    <h2>❤️ A Special Message ❤️</h2>
+
+    <p id="message"></p>
+
+    <button class="close-btn" onclick="closeLetter()">
+        Close 💕
+    </button>
+
+</div>
+
+<script>
+
+const loveMessage = `Every moment with you feels like a beautiful dream. ✨
+
+Your smile brightens my day, your presence brings peace to my heart, and your kindness makes life more beautiful. 🌹
+
+Thank you for being such a wonderful person. 💖`;
+
+function typeWriter(text, element, speed = 40){
+
+    element.innerHTML = "";
+
+    let i = 0;
+
+    function typing(){
+
+        if(i < text.length){
+
+            if(text.charAt(i) === "\n"){
+                element.innerHTML += "<br>";
+            }
+            else{
+                element.innerHTML += text.charAt(i);
+            }
+
+            i++;
+
+            setTimeout(typing, speed);
+        }
+    }
+
+    typing();
+}
+
+function openLetter(){
+
+    document.getElementById("popup").classList.add("show");
+
+    document.getElementById("gift").style.display = "none";
+
+    typeWriter(
+        loveMessage,
+        document.getElementById("message"),
+        35
+    );
+}
+
+function closeLetter(){
+
+    document.getElementById("popup").classList.remove("show");
+
+    document.getElementById("gift").style.display = "block";
+
+    document.getElementById("message").innerHTML = "";
+}
+
+</script>
+
+</body>
+</html>

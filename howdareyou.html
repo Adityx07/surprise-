@@ -1,89 +1,117 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>How Dare You</title>
-    <style>
-        * {
-            margin: 0px;
-            padding: 0px;
-            box-sizing: border-box;
-            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>How Dare You 😡</title>
 
-        body {
-            background-color: rgba(246, 234, 109, 0.809);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Franklin Gothic Medium','Arial Narrow',Arial,sans-serif;
+}
 
-        h2 {
-            font-size: 34px;
-            text-align: center;
-            margin-top: 10px;
-        }
+body{
+    min-height:100vh;
+    background-color:rgba(246,234,109,0.809);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:20px;
+}
 
-        .card {
-            /* border: 2px solid black; */
-            border-radius: 10px;
-            width: 220px;
-            height: 280px;
-            margin-top: 30px;
-            background: url("https://media1.tenor.com/m/Ag8zeVQT3fYAAAAC/wizard-cat-cat-wizard.gif");
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: cover;
-        }
+.container{
+    width:100%;
+    max-width:400px;
+    text-align:center;
+}
 
-        .card h3 {
-            text-align: center;
-            font-weight: bolder;
-            font-family: Arial, Helvetica, sans-serif;
-            color: white;
-            margin-top: 15px;
-            font-size: 22px;
-            letter-spacing:2.5px;
-        }
+h2{
+    font-size:clamp(1.8rem,4vw,2.2rem);
+    margin-bottom:20px;
+}
 
-        button {
-            border: none;
-            border-radius: 20px;
-            width: 180px;
-            padding: 8px;
-            text-align: center;
-            cursor: pointer;
-            background-color: rgba(239, 36, 161, 0.897);
-            font-size: 15px;
-            color: white;
-            font-weight: bold;
-            margin-top: 15px;
-            margin-left: 20px;
-            letter-spacing: 1.5px;
-        }
+.card{
+    width:100%;
+    max-width:280px;
+    height:320px;
+    margin:auto;
+    border-radius:15px;
+    background:url("https://media1.tenor.com/m/Ag8zeVQT3fYAAAAC/wizard-cat-cat-wizard.gif");
+    background-position:center;
+    background-size:cover;
+    background-repeat:no-repeat;
+    display:flex;
+    justify-content:flex-start;
+    align-items:center;
+    flex-direction:column;
+}
 
-        button a {
-            text-decoration: none;
-            color: white;
-            font-weight: bold;
-        }
+.card h3{
+    color:white;
+    margin-top:20px;
+    font-size:1.4rem;
+    letter-spacing:2px;
+}
 
-        .scale3d:hover {
-            transform: scale3d(1.1, 1.1, 1.1);
-        }
-    </style>
+button{
+    border:none;
+    border-radius:25px;
+    width:100%;
+    max-width:220px;
+    padding:12px;
+    cursor:pointer;
+    background-color:rgba(239,36,161,0.897);
+    color:white;
+    font-size:15px;
+    font-weight:bold;
+    margin-top:20px;
+    transition:.3s;
+}
+
+button:hover{
+    transform:scale(1.08);
+}
+
+button a{
+    text-decoration:none;
+    color:white;
+}
+
+@media(max-width:480px){
+
+    .card{
+        height:280px;
+    }
+
+    .card h3{
+        font-size:1.2rem;
+    }
+
+    button{
+        max-width:180px;
+    }
+}
+</style>
 </head>
 
 <body>
-    <div class="container">
-        <h2>How Dare You ? 😡</h2>
-        <div class="card">
-            <h3>How Dare you</h3>
-        </div>
-        <button class="scale3d"><a href="yes.html">YES YES</a></button>
-    </div>
-</body>
 
+<div class="container">
+
+    <h2>How Dare You ? 😡</h2>
+
+    <div class="card">
+        <h3>How Dare You</h3>
+    </div>
+
+    <button>
+        <a href="yes.html">YES YES</a>
+    </button>
+
+</div>
+
+</body>
 </html>
